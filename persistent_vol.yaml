@@ -1,0 +1,13 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: awselasticblockstorevol
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+   - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  awsElasticBlockStore:
+    volumeID: your-EBS-volume-ID
+    fsType: ext4
